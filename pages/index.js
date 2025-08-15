@@ -1,6 +1,5 @@
 function Home() {
-  return <h1> Lucas Skat Man </h1>,
-  <h3> Fre </h3>; 
+  return <h1> Lucas Skat Man <br> tu que deixa </h1>; 
 }
 
 export default Home;
