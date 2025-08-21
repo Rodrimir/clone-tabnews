@@ -70,7 +70,7 @@ export default function Home() {
             <div className="features-grid">
               <div className="feature"><strong>Memórias</strong><p>Momentos especiais compartilhados</p></div>
               <div className="feature"><strong>Projetos</strong><p>Trabalhos e conquistas</p></div>
-              <div className="feature"><strong>Contato</strong><p>Formas de me encontrar <br>rodrigo.miranda.silva.rms@gmail.com<br>53991824271</br></br></p></div>
+              <div className="feature"><strong>Contato</strong><p>Formas de me encontrar rodrigo.miranda.silva.rms@gmail.com 53991824271</p></div>
             </div>
           </section>
         </div>
