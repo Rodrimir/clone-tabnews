@@ -69,8 +69,8 @@ export default function Home() {
             <h3>Em breve você encontrará aqui:</h3>
             <div className="features-grid">
               <div className="feature"><strong>Memórias</strong><p>Momentos especiais compartilhados</p></div>
-              <div className="feature"><strong>Projetos</strong><p>Trabalhos e conquistas</p></div>
-              <div className="feature"><strong>Contato</strong><p>Formas de me encontrar rodrigo.miranda.silva.rms@gmail.com 53991824271</p></div>
+              <div className="feature"><strong>Projetos</strong><p>Trabalhos e Projetos</p></div>
+              <div className="feature"><strong>Contato</strong><p>Contato de Whatsapp 53991824271</p></div>
             </div>
           </section>
         </div>
@@ -78,7 +78,7 @@ export default function Home() {
 
       <footer className="footer">
         <div className="container">
-          <p>© 2025 Rodrigo Silva - Feito com ❤️ para as pessoas que amo</p>
+          <p>© 2025 Rodrigo Silva E-mail - rodrigo.miranda.silva.rms@gmail.com</p>
         </div>
       </footer>
     </>
