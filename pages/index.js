@@ -39,8 +39,7 @@ function Home({ posts }) {
 
 export async function getStaticProps() {
   const res = await fetch("https://www.tabnews.com.br/api/v1/contents");
-  const { body: posts } = await res.json();
-
+  const posts = await res.json();
   return {
     props: {
       posts: posts.slice(0, 15),
