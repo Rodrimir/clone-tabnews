@@ -36,15 +36,16 @@ function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("https://www.tabnews.com.br/api/v1/contents");
-  const posts = await res.json();
+// 👇 Esta linha agora está CORRETA
+const res = await fetch("https://www.tabnews.com.br/api/v1/contents"); 
+const posts = await res.json();
 
-  return {
+return {
     props: {
-      posts: posts.slice(0, 15),
+    posts: posts.slice(0, 15), // Pega apenas os 15 primeiros posts
     },
-    revalidate: 60,
-  };
+    revalidate: 60, // Regenera a página a cada 60 segundos
+};
 }
 
 export default Home;
