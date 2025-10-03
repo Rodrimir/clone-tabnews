@@ -36,16 +36,34 @@ function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-// 👇 Esta linha agora está CORRETA
-const res = await fetch("https://www.tabnews.com.br/api/v1/contents"); 
-const posts = await res.json();
+  try {
+    const res = await fetch("https://www.tabnews.com.br/api/v1/contents");
 
-return {
-    props: {
-    posts: posts.slice(0, 15), // Pega apenas os 15 primeiros posts
-    },
-    revalidate: 60, // Regenera a página a cada 60 segundos
-};
+    // Verifica se a resposta da API foi bem-sucedida
+    if (!res.ok) {
+      // Se não foi (ex: erro 500), joga um erro para ser capturado pelo catch
+      throw new Error(`Failed to fetch posts, received status ${res.status}`);
+    }
+
+    const posts = await res.json();
+
+    return {
+      props: {
+        posts: posts.slice(0, 15),
+      },
+      revalidate: 60,
+    };
+  } catch (error) {
+    // Se qualquer parte do 'try' falhar, o build não vai quebrar.
+    // Ele vai apenas logar o erro no console da Vercel e renderizar a página sem posts.
+    console.error("Error in getStaticProps:", error);
+    return {
+      props: {
+        posts: [], // Retorna uma lista vazia de posts em caso de erro
+      },
+      revalidate: 60,
+    };
+  }
 }
 
 export default Home;
